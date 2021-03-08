@@ -30,7 +30,7 @@ public class Main {
         while (counterofshots<64){
             int countofrightshots1 = 0;
             int countofrightshots2 = 0;
-            System.out.println("Your field:");
+            System.out.println("Your field Omar Pidor:");
             for (int i = 0; i < 8; i++){
                 for (int j = 0; j < 8; j++){
                     System.out.print(player1.Field[i][j]);
