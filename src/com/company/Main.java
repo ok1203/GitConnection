@@ -30,20 +30,10 @@ public class Main {
         while (counterofshots<64){
             int countofrightshots1 = 0;
             int countofrightshots2 = 0;
-            System.out.println("Your field Omar Pidor:");
-            for (int i = 0; i < 8; i++){
-                for (int j = 0; j < 8; j++){
-                    System.out.print(player1.Field[i][j]);
-                }
-                System.out.println(" ");
-            }
+            System.out.println("Your field:");
+            player4.draw();
             System.out.println("Opponents field:");
-            for (int i = 0; i < 8; i++){
-                for (int j = 0; j < 8; j++){
-                    System.out.print(player3.Field[i][j]);
-                }
-                System.out.println(" ");
-            }
+            player3.draw();
 
             System.out.println("Where will you shot(input coordinates):");
             int x1 , y1;
@@ -56,6 +46,7 @@ public class Main {
 
             }else{
                 System.out.println("you shooted wrong");
+                player3.Field[x1][y1] = "X";
             }
 
             System.out.println("Computer is making a shot");
@@ -63,18 +54,21 @@ public class Main {
             int a = 0, b = 8;
             x2 = a + (int) (Math.random() * b);
             y2 = a + (int) (Math.random() * b);
+            System.out.println(x2 + " " + y2);
             if (player1.Field[x2][y2] == "1") {
                 System.out.println("computer shooted right");
-                player4.Field[x1][y1] = "1";
+                player4.Field[x2][y2] = "X";
                 countofrightshots2++;
             }else{
                 System.out.println("computer shooted wrong");
+                player4.Field[x2][y2] = "X";
             }
 
             if (countofrightshots1 == 6 || countofrightshots2 == 6){
                 break;
             }
 
+            counterofshots++;
         }
         // write your code here
         /*
