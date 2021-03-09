@@ -29,7 +29,7 @@ public class Main {
         }
 
 
-        int counterofshots = 0;
+        int counterofshots = 64;
         Field player1 = new Field();
         Field player2 = new Field();
         Field player3 = new Field();
@@ -53,9 +53,11 @@ public class Main {
 
         }
 
-        while (counterofshots < 64) {
-            int countofrightshots1 = 0;
-            int countofrightshots2 = 0;
+        int countofrightshots1 = 0;
+        int countofrightshots2 = 0;
+
+        while (counterofshots >= 0) {
+
             System.out.println("Your field:");
             player4.draw();
             System.out.println("Opponents field:");
@@ -94,22 +96,11 @@ public class Main {
                 break;
             }
 
-            counterofshots++;
+            counterofshots--;
         }
-        // write your code here
-        /*
 
-        /*for(int i = 0 ; i < 3; i++){
-            for(int j = 0 ; j < 3 ; j++){
-                if(i == x && j ==y) {
-                    System.out.print("x ");
-                }
-                else{
-                    System.out.print("o ");
-                }
-            }
-            System.out.println("\n");
-        }*/
+        System.out.println("Your score is " + counterofshots);
+
     }
     }
 
