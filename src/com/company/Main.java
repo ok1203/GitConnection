@@ -123,16 +123,17 @@ public class Main {
 
         System.out.println("Your score is " + counterofshots);
         System.out.println("What is your name?");
+        scan.nextLine();
         String name = scan.nextLine();
-        InsertToDB();
+        InsertToDB(name, counterofshots);
     }
-    public static void InsertToDB(){
+    public static void InsertToDB(String name, int score){
         try (Connection conn = DriverManager.getConnection(
                 "jdbc:postgresql://127.0.0.1:5432/postgres", "postgres", "postgres")) {
             if (conn != null) {
 
                 Statement stmt = conn.createStatement();
-                stmt.executeUpdate("INSERT INTO scoreboard VALUES(name, counterofshots);");
+                stmt.executeUpdate("INSERT INTO scoreboard VALUES(" + score + ",'" + name + "');");
                 int i = 1;
             } else {
                 System.out.println("Ne rabotaet");
@@ -175,12 +176,12 @@ public class Main {
 
 
 
-        while (option != 4){
+        while (option != 3){
             System.out.println("Choose the option:");
             System.out.println("1.Start the game");
             System.out.println("2.Scoreboard");
             System.out.println("3.Leave");
-            System.out.println("4.Insert");
+
             option = scan.nextInt();
             if (option == 1){
                 start();
