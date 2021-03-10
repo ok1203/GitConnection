@@ -122,15 +122,17 @@ public class Main {
         }
 
         System.out.println("Your score is " + counterofshots);
+        System.out.println("What is your name?");
+        String name = scan.nextLine();
         InsertToDB();
     }
     public static void InsertToDB(){
         try (Connection conn = DriverManager.getConnection(
                 "jdbc:postgresql://127.0.0.1:5432/postgres", "postgres", "postgres")) {
             if (conn != null) {
-                System.out.println("Qosyldy");
+
                 Statement stmt = conn.createStatement();
-                stmt.executeUpdate("INSERT INTO scoreboard VALUES(counterofshots,'Omar');");
+                stmt.executeUpdate("INSERT INTO scoreboard VALUES(name, counterofshots);");
                 int i = 1;
             } else {
                 System.out.println("Ne rabotaet");
