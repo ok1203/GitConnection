@@ -149,8 +149,5 @@ public class Field {
         }
     }
 
-    public void SetField(){
-
-    }
 
 }

@@ -154,7 +154,7 @@ public class Main {
                 System.out.println("Qosyldy");
                 Statement stmt = conn.createStatement();
                 ResultSet rs = stmt.executeQuery("SELECT * from  scoreboard;");
-                int i = 1;
+                int i = 0;
                 while (rs.next()) {
                     System.out.println(rs.getInt("score") + "\t"
                             + rs.getString("name"));
