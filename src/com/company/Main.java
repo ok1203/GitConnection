@@ -134,7 +134,7 @@ public class Main {
 
                 Statement stmt = conn.createStatement();
                 stmt.executeUpdate("INSERT INTO scoreboard VALUES(" + score + ",'" + name + "');");
-                int i = 1;
+                int i = 0;
             } else {
                 System.out.println("Ne rabotaet");
             }
